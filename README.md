@@ -2,6 +2,10 @@
 
 > A Vue.js project
 
+<p>
+<img src="https://raw.githubusercontent.com/raflesngln/vuetify-template-admin/master/Capture.JPG" alt="My cool logo"/>  
+</p>
+  
 ## Build Setup
 
 ``` bash
