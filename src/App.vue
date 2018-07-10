@@ -16,7 +16,7 @@
                 <img src="https://randomuser.me/api/portraits/men/85.jpg" >
               </v-list-tile-avatar>
               <v-list-tile-content>
-                <v-list-tile-title>Rafles Nainggolan</v-list-tile-title>
+                <v-list-tile-title>Rafles N</v-list-tile-title>
               </v-list-tile-content>
             </v-list-tile>
           </v-list>
@@ -44,6 +44,7 @@
                 <v-list-tile-action>
                   <v-icon>{{ subItem.action }}</v-icon>
                 </v-list-tile-action>
+              </v-list-tile>
               </v-list-tile>
             </v-list-group>
           </v-list>
@@ -86,7 +87,7 @@
         </v-dialog>
 
     <v-badge color="red" overlap>
-      <span slot="badge">!</span>
+      <span slot="badge">{{this.jml_notif}}</span>
       <v-icon large color="grey">mail</v-icon>
     </v-badge>
       
@@ -124,20 +125,22 @@
 export default {
   data () {
     return {
+      jml_notif:'12',
       clipped: false,
       drawer: true,
       fixed: false,
      items: [
         {
           action: 'local_activity',
-          title: 'Attractions',
+          title: 'Master',
           items: [
-            { title: 'List Item' }
+                    { icon: 'product', title: 'product', path:"product"},
+                    { icon: 'users', title: 'users', path:"users"}
           ]
         },
         {
           action: 'restaurant',
-          title: 'Dining',
+          title: 'Transaction',
           items: [
             { title: 'Breakfast & brunch' },
             { title: 'New American' },
@@ -184,7 +187,12 @@ export default {
 
     }
   },
-  name: 'App'
+  name: 'App',
+  methods:{
+        notif () {
+              this.jml_notif='100'
+         }
+  }
 }
 </script>
 <style scopped>
@@ -192,4 +200,12 @@ a{
   text-decoration:none;
 }
 
+.content--wrap {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    margin-left: 1%;
+    max-width: 98%;
+    margin-top:1%;
+}
 </style>

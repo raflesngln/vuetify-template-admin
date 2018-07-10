@@ -1,6 +1,10 @@
 <template>
 <div>
-      <v-dialog v-model="dialog" persistent max-width="500px">
+<div v-if="progressing">
+      <p>Loading.................!!!.</p>
+</div>
+
+      <v-dialog v-model="dialog" persistent max-width="500px" v-else>
         <v-btn color="primary" dark slot="activator">Open Dialog</v-btn>
         <v-card>
           <v-card-title>
@@ -65,12 +69,16 @@
 import Table from '@/components/table'
 
 export default {
+    created() {
+      this.progressing = false
+  },
     components: {
     Table
   },
   data () {
     return {
       dialog: false,
+      progressing: true,
       name: 'App'
    }
   }
